@@ -1,0 +1,3 @@
+if ('WebAssembly' in window) {
+
+}
