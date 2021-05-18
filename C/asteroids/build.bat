@@ -1,0 +1,1 @@
+call emcc asteroids.c main.c player.c renderer.c vector.c -o app.html -Wall -g -lm -s USE_SDL=2
