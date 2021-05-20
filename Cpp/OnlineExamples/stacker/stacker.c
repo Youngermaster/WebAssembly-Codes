@@ -137,10 +137,6 @@ void game_loop() {
 }
 
 int main() {
-    // SDL_Init(SDL_INIT_VIDEO);
-    // SDL_CreateWindowAndRenderer(512, 512, 0, &window, &renderer);
-    // surface = SDL_CreateRGBSurface(0, 512, 512, 32, 0, 0, 0, 0);
-
     /* Initialize SDL's video system and check for errors. */
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         printf("Unable to initialize SDL: %s\n", SDL_GetError());
@@ -163,10 +159,10 @@ int main() {
         printf("Unable to load bitmap.\n");
         return 1;
     }
-
-    emscripten_set_main_loop(game_loop, 0, 1);
+    game_loop();
 
     /* Free the memory that was allocated to the bitmap. */
     SDL_FreeSurface(image);
+
     return 0;
 }
