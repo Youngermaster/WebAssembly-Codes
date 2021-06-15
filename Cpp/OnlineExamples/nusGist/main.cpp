@@ -1,10 +1,9 @@
-// $ em++ -lwebsocket.js -o index.html main.cpp
-
 #include <emscripten/emscripten.h>
 #include <emscripten/websocket.h>
 #include <stdio.h>
 
-EM_BOOL onopen(int eventType, const EmscriptenWebSocketOpenEvent *websocketEvent, void *userData) {
+EM_BOOL
+onopen(int eventType, const EmscriptenWebSocketOpenEvent *websocketEvent, void *userData) {
     puts("onopen");
 
     EMSCRIPTEN_RESULT result;
